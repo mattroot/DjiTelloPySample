@@ -1,0 +1,4 @@
+opencv-python
+keyboard
+djitellopy==2.4.0
+numpy
