@@ -11,8 +11,8 @@ from enum import Enum
 
 class DroneState(Enum):
     DetectCenter = 0
-    FollowLine = 1
-    DetectNextLine = 2
+    DetectNextLine = 1
+    FollowLine = 2
 
 def detection_condition(x, y, averages):
     return ((averages[x, y] / np.max(averages) < 2) and (averages[x, y] / np.max(averages) > 0.7))
@@ -42,7 +42,7 @@ while fly:
         fly = False
         break
 
-    # get image, desaturize and detect lines
+    # get image, desaturate and detect lines
     img = t.get_frame_read().frame
     image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     ret, detected = cv2.threshold(image, 50, 255, cv2.THRESH_BINARY_INV)
