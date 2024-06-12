@@ -5,3 +5,5 @@
 *.aux
 *.out
 *.pdf
+*.log
+*.synctex.gz

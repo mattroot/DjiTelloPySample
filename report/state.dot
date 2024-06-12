@@ -1,0 +1,14 @@
+strict digraph state {
+
+DetectCenter;
+DetectLine;
+FollowLine;
+
+Start [shape=Mdiamond];
+
+Start -> DetectCenter;
+DetectCenter -> DetectLine [ label="   Center found" id="a2b"];
+DetectLine -> FollowLine [ label="   Line found" id="b2c" ];
+FollowLine -> DetectLine [ label="Line ended/lost   " id="c2b" ];
+DetectLine -> DetectCenter [ label="Center lost   " id="b2a" ];
+}
